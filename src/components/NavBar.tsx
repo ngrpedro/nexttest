@@ -12,7 +12,7 @@ export default function NavBar() {
           <span className="icon fas fa-2x fontAwesomeIcon">
             <FontAwesomeIcon icon={faHotel} />
           </span>
-          <div className="navbar-start ml-3">
+          <div className="navbar-start ml-6">
             <Link href="/">
               <a className="navbar-item">Home</a>
             </Link>

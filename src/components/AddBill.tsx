@@ -1,36 +1,40 @@
-export default function AddBill() {
+import { useState } from "react";
 
-  const hadleSubmit = (event) => {
-      console.log(event.target)
-  }
+export default function AddBill() {
+  const [input, setInput] = useState("");
 
   return (
     <>
-        <form className="column is-12" onSubmit={hadleSubmit}>
-          <div className="column is-4">
-            <label className="label">Descrição</label>
-            <div className="control">
-              <input className="input" type="text" />
-            </div>
+      <form className="column is-12">
+        <div className="column is-4">
+          <label className="label">Descrição</label>
+          <div className="control">
+            <input
+              className="input"
+              type="text"
+              onChange={(event) => setInput(event.target.value)}
+            />
           </div>
-          <div className="column is-4">
-            <label className="label">Vencimento</label>
-            <div className="control">
-              <input className="input" type="text" placeholder="DD/MM/AAAA" />
-            </div>
+          <label>valor input: {input}</label>
+        </div>
+        <div className="column is-4">
+          <label className="label">Vencimento</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="DD/MM/AAAA" />
           </div>
-          <div className="column is-4">
-            <label className="label">Valor</label>
-            <div className="control">
-              <input className="input" type="text" placeholder="R$0,00" />
-            </div>
+        </div>
+        <div className="column is-4">
+          <label className="label">Valor</label>
+          <div className="control">
+            <input className="input" type="text" placeholder="R$0,00" />
           </div>
-          <div className="column is-12">
-            <button className="button mt-4 isPrimary" type="submit">
-              Button
-            </button>
-          </div>
-        </form>
+        </div>
+        <div className="column is-12">
+          <button className="button mt-4 isPrimary" type="submit">
+            Button
+          </button>
+        </div>
+      </form>
     </>
   );
 }
