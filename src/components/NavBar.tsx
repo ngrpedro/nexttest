@@ -6,20 +6,31 @@ export default function NavBar() {
   return (
     <>
       <div className="navbar isPrimary">
-        <div className="navbar-band ">
+        <div className="navbar-brand">
+          <span className="icon fas fa-2x fontAwesomeIcon">
+            <FontAwesomeIcon icon={faHotel} />
+          </span>
+
           <a
-            id="a"
+            id="burger"
             role="button"
             className="navbar-burger"
             aria-label="menu"
             aria-expanded="false"
             data-target="navBarPedro"
             onClick={() => {
-              let v = document.getElementById("a");
-              if (v.classList.contains("is-active")) {
-                v.classList.remove("is-active");
+              let burger = document.getElementById("burger");
+              let navBar = document.getElementById("navBar");
+
+              if (
+                burger.classList.contains("is-active") ||
+                navBar.classList.contains("is-active")
+              ) {
+                burger.classList.remove("is-active");
+                navBar.classList.remove("is-active");
               } else {
-                v.classList.add("is-active");
+                burger.classList.add("is-active");
+                navBar.classList.add("is-active");
               }
             }}
           >
@@ -29,11 +40,8 @@ export default function NavBar() {
           </a>
         </div>
 
-        <div className="navbar-menu is-active" id="navBarPedro">
-          <span className="icon fas fa-2x fontAwesomeIcon">
-            <FontAwesomeIcon icon={faHotel} />
-          </span>
-          <div className="navbar-start ml-6">
+        <div className="navbar-menu isPrimary ml-5" id="navBar">
+          <div className="navbar-start">
             <Link href="/">
               <a className="navbar-item">Home</a>
             </Link>
