@@ -2,7 +2,23 @@ import NavBar from "../../src/components/NavBar";
 import Bill from "../../src/components/Bill";
 import AddBill from "../../src/components/AddBill";
 
+import db from "../../db";
+import { useEffect, useState } from "react";
+
 export default function FirstPost() {
+  const [bills, setBills] = useState([]);
+
+  useEffect(() => {
+    const getBills = () => {
+      let list = db.getBills();
+      setBills(list);
+
+      console.log(list);
+    };
+
+    getBills();
+  }, []);
+
   return (
     <>
       <NavBar />
@@ -11,36 +27,15 @@ export default function FirstPost() {
         <div className="columns is-multiline mt-3">
           <AddBill />
 
-          <Bill
-            description="Água"
-            amount="R$80,00"
-            date="10/03/2021"
-            status={false}
-          />
-          <Bill
-            description="Aluguel"
-            amount="R$650,00"
-            date="25/03/2021"
-            status={false}
-          />
-          <Bill
-            description="Energia"
-            amount="R$650,00"
-            date="25/03/2021"
-            status={false}
-          />
-          <Bill
-            description="Água"
-            amount="R$650,00"
-            date="25/03/2021"
-            status={false}
-          />
-          <Bill
-            description="Água"
-            amount="R$650,00"
-            date="25/03/2021"
-            status={false}
-          />
+          {bills.map((item, key) => (
+            <Bill
+              key={key}
+              description={item.description}
+              amount={item.amount}
+              date={item.date}
+              status={item.status}
+            />
+          ))}
         </div>
       </div>
     </>

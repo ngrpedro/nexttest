@@ -1,5 +1,13 @@
 import { useState } from "react";
 
+interface BillProps {
+  description: string;
+  amount: string;
+  date: string;
+  status: false;
+}
+
+
 export default function AddBill() {
   const [input, setInput] = useState("");
 
