@@ -1,10 +1,11 @@
+import Head from "next/head"
 import NavBar from "../src/components/NavBar";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
 
+      <NavBar />
       <div className="container mt-5">
         <h1>
           <strong>HOW TO USE:</strong>

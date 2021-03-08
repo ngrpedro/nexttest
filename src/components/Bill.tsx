@@ -18,7 +18,7 @@ export default function Bill(bill: BillProps) {
   return (
     <>
       <div
-        className={`column is-3 box ${change()}`}
+        className={`column is-3 m-5 box ${change()}`}
         onClick={() => {
           setIsToggle(!isToggle);
         }}

@@ -6,31 +6,33 @@ export default function AddBill() {
   return (
     <>
       <form className="column is-12">
-        <div className="column is-4">
-          <label className="label">Descrição</label>
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              onChange={(event) => setInput(event.target.value)}
-            />
+        <div className="column is-12 is-flex">
+          <div className="column is-4">
+            <label className="label">Descrição</label>
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                onChange={(event) => setInput(event.target.value)}
+              />
+            </div>
+            <label>valor input: {input}</label>
           </div>
-          <label>valor input: {input}</label>
-        </div>
-        <div className="column is-4">
-          <label className="label">Vencimento</label>
-          <div className="control">
-            <input className="input" type="text" placeholder="DD/MM/AAAA" />
+          <div className="column is-4">
+            <label className="label">Vencimento</label>
+            <div className="control">
+              <input className="input" type="text" placeholder="DD/MM/AAAA" />
+            </div>
           </div>
-        </div>
-        <div className="column is-4">
-          <label className="label">Valor</label>
-          <div className="control">
-            <input className="input" type="text" placeholder="R$0,00" />
+          <div className="column is-4">
+            <label className="label">Valor</label>
+            <div className="control">
+              <input className="input" type="text" placeholder="R$0,00" />
+            </div>
           </div>
         </div>
         <div className="column is-12">
-          <button className="button mt-4 isPrimary" type="submit">
+          <button className="button ml-3 isPrimary" type="submit">
             Button
           </button>
         </div>

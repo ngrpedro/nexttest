@@ -8,7 +8,7 @@ export default function FirstPost() {
       <NavBar />
 
       <div className="container">
-        <div className="columns is-multiline mt-3 is-flex is-align-items-center">
+        <div className="columns is-multiline mt-3">
           <AddBill />
 
           <Bill

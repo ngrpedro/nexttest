@@ -22,16 +22,8 @@ export default function NavBar() {
               let burger = document.getElementById("burger");
               let navBar = document.getElementById("navBar");
 
-              if (
-                burger.classList.contains("is-active") ||
-                navBar.classList.contains("is-active")
-              ) {
-                burger.classList.remove("is-active");
-                navBar.classList.remove("is-active");
-              } else {
-                burger.classList.add("is-active");
-                navBar.classList.add("is-active");
-              }
+              burger.classList.toggle("is-active");
+              navBar.classList.toggle("is-active");
             }}
           >
             <span aria-hidden="true"></span>
